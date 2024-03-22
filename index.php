@@ -113,7 +113,7 @@
 							aria-hidden="true">&times;</span></button>
 					<div class="modal-content">
 						<div class="user-box">
-							<h2>Students Login</h2>
+							<h2>Students Login </h2>
 							<!--FORM FIELD START-->
 							<div class="form">
 								<div class="input-container">
@@ -127,7 +127,7 @@
 										name="LoginPassword">
 									<i class="fa fa-unlock"></i>
 								</div>
-								
+
 								<div class="input-container">
 									<input type="submit" class="btn-style" value="Log In">
 								</div>
@@ -161,7 +161,6 @@
 								<input type="text" id="firstname" name="firstname" placeholder="Firstname">
 							</div>
 
-
 							<div class="input-container">
 								<input type="password" id="password" name="password" placeholder="Password">
 								<i class="fa fa-unlock"></i>
@@ -178,6 +177,9 @@
 							<div class="input-container">
 								<input type="text" id="grade" name="grade" placeholder="Grade">
 							</div>
+
+
+
 
 							<div class="input-container">
 								<button class="btn-style" id="StudentRegsiterbtn">Register</button>
@@ -2440,11 +2442,11 @@
 	<!--Custom JavaScript-->
 	<script src="js/custom.js"></script>
 	<script>
-
+		//Jquery start here
 		$(document).ready(function () {
 
 			$('#StudentRegsiterbtn').click(function () {
-				debugger;
+		        debugger;
 				var registrationNo = $('#registrationNo').val();
 				var firstname = $('#firstname').val();
 				var password = $('#password').val();
@@ -2479,14 +2481,16 @@
 			});
 
 			$('#StudentloginForm').submit(function (e) {
+			
 				e.preventDefault();
 				$.ajax({
 					type: "POST",
 					url: "studentloginbackend.php",
 					data: $(this).serialize(),
 					success: function (response) {
+						debugger;
 						if (response.trim() === 'success') {
-							window.location.href = 'ourevent.php';
+							window.location.href = 'ourevent.php'; //redirect back to success apges after login
 						} else {
 							// $('#message').html(response);
 							alert(response);

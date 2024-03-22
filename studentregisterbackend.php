@@ -1,7 +1,6 @@
 <?php
 // include db connection
 include 'db/db_connection.php';
-
 $registrationNo = $_POST['registrationNo'];
 $firstname = $_POST['firstname'];
 $password = $_POST['password'];
